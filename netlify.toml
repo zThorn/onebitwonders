@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo --gc --minify --themesDir themes/ --theme repo"
+command = "hugo --gc --minify --themesDir themes/ --theme hugo-coder"
 
 [context.production.environment]
 HUGO_VERSION = "0.59.0"
