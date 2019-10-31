@@ -24,12 +24,12 @@ paginate = 10
   #  lightestColor = "#ffffff"
 
   # Green theme
-  #[params.style]
-  #  darkestColor = "#315659"
-  #  darkColor = "#253031"
-  #  primaryColor = "#dad865"
-  #  lightColor = "#96a879"
-  #  lightestColor = "#fff"
+  [params.style]
+    darkestColor = "#315659"
+    darkColor = "#253031"
+    primaryColor = "#633e34"
+    lightColor = "#d88772"
+    lightestColor = "#fff"
 
   # Red and black theme
   #[params.style]
