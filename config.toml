@@ -25,7 +25,7 @@ paginate = 10
 
   # Green theme
   [params.style]
-    darkestColor = "#315659"
+    darkestColor = "#181F20"
     darkColor = "#253031"
     primaryColor = "#633e34"
     lightColor = "#d88772"
