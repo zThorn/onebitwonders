@@ -9,9 +9,9 @@ paginate = 10
   [[params.social]]
     name = "github"
     url = "https://github.com/zThorn"
-  [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/zachthornton"
+  #[[params.social]]
+  #  name = "twitter"
+  #  url = "https://twitter.com/zachthornton"
   [[params.social]]
     name = "gitlab"
     url = "https://gitlab.com/zThorn"
