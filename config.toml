@@ -1,7 +1,7 @@
 baseURL = "https://onebitwonders.com"
-title = "One Bit Wonders"
+title = "Zach Thornton"
 theme = "m10c"
-paginate = 5
+paginate = 10
 
 [params]
   author = "Zach Thornton"
