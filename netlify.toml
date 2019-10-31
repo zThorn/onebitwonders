@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo --gc --minify --themesDir themes/ --theme hugo-coder"
+command = "hugo --gc --minify --themesDir themes/ --theme hugo-coder --baseUrl=https://onebitwonders.com"
 
 [context.production.environment]
 HUGO_VERSION = "0.59.0"
