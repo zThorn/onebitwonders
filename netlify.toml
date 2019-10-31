@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo --gc --minify --themesDir themes/ --theme hugo-cactus-theme --baseUrl=https://onebitwonders.com"
+command = "hugo --gc --minify --themesDir themes/ --theme hermit --baseUrl=https://onebitwonders.com"
 
 [context.production.environment]
 HUGO_VERSION = "0.59.0"
