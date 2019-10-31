@@ -1,11 +1,11 @@
 title = "Solar Theme"
 theme = "solar-theme-hugo"
 paginate = 5
-pygmentsStyle = "solarized-dark" # solarized-light, -dark or -dark256
+chromaStyle = "solarized-dark"
 copyright = ""
 
 [params]
-  scheme = "preference" # light, dark, gray or preference
+  scheme = "dark" # light, dark, gray or preference
   description = "A wizard is never late"
 
 [menu]
