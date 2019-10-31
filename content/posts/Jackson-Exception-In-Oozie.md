@@ -7,7 +7,7 @@ draft: false
 ## Jackson Exception in Oozie
 When using Spark2 within an oozie workflow, I've noticed that out of the box Hortonworks provides conflicting jars with Jackson, which leads to an exception when you launch a Spark2 job.  The exception usually looks something like this:
 
-{{< highlight text "linenos=table" >}}
+{{< highlight text >}}
 2018-07-06 14:45:53,763 [Thread-43] ERROR org.apache.spark.sql.execution.datasources.FileFormatWriter  - Aborting job null.
 java.lang.NoSuchMethodError: com.fasterxml.jackson.databind.JavaType.isReferenceType()Z
         at com.fasterxml.jackson.databind.ser.BasicSerializerFactory.findSerializerByLookup(BasicSerializerFactory.java:302)
@@ -28,11 +28,11 @@ java.lang.NoSuchMethodError: com.fasterxml.jackson.databind.JavaType.isReference
 {{< / highlight >}}
 
 In order to resolve it, I remove the older version of all jackson libraries:
-{{< highlight text "linenos=table" >}}
+{{< highlight text >}}
 hdfs dfs -rm /user/oozie/share/lib/lib_<ts>/oozie/jackson* 
 {{< / highlight >}}
 
 and then update the oozie sharelib:
-{{< highlight text "linenos=table" >}}
+{{< highlight text >}}
 oozie admin -sharelibupdate
 {{< / highlight >}}

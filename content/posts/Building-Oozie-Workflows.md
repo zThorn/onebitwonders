@@ -11,14 +11,14 @@ At the cornerstone of such an effort lies the workflow scheduling tool [Oozie](h
 ## Workflows
 A simplistic Oozie workflow is described by a workflow.xml file that sits in the root level directory of your job, as well as a job.properties file.  Think of the job.properties file as a series of variables that get used within your workflow.  For this example we'll start building out a simple workflow that executes a hive script, and then runs a spark2 job.  We'll start this out by creating a directory to store our jobs and define our job.properties file:
 
-{{< highlight shell "linenos=table">}}
+{{< highlight shell >}}
 mkdir oozie_workflow/
 cd oozie_workflow && mkdir lib
 vim job.properties
 {{< / highlight >}}
 
 #### job.properties
-{{< highlight text "linenos=table">}}
+{{< highlight text >}}
 nameNode=hdfs://<namenodeHostname>:8020
 jobTracker=<jobtrackerHostname>:8050
 resourceManager=<resourceManager>:8050
@@ -35,7 +35,7 @@ oozie.wf.application.path=${nameNode}/user/test/example
 So that was a lot, so lets break down what every property is going to be used for.  All hive actions in Oozie are executed via an underlying beeline command, so we have to declare what JDBC uri we're going to be using, which yarn queue, and the hive kerberos principal we'll be using(assuming you have hive.server2.enable.doAs set to false set to false).  We declare our nameNode, jobTracker, and resourceManager to facilitate connections between beeline and our spark client and the hadoop cluster.  We're going to tell oozie to use the host systems libpath, and I'm declaring which version of spark that we want to use.  Setting up that libpath is out of the scope for this tutorial, but you can get the gist from [this hortonworks document](https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_spark-component-guide/content/ch_oozie-spark-action.html#spark-config-oozie-spark2).  The oozie.wf.aplication.path is set to tell oozie where in HDFS our underlying workflow exists.  So now that that's out of the way, lets create our workflow.xml file that'll declare what oozie should actually be DOING.
 
 #### workflow.xml
-{{< highlight xml "linenos=table">}}
+{{< highlight xml >}}
 <?xml version="1.0" encoding="UTF-8"?>
 <workflow-app xmlns="uri:oozie:workflow:0.5" name="SampleWorkflow">
   <credentials>
@@ -103,7 +103,7 @@ If you use Kerberos (I do), you'll need to declare which principal HCAT should b
 Actually scheduling this workflow is easy enough if you're familiar with cron.  Something important to note however, is that oozie will run historical jobs if your start time takes place in the past.  So if I were to put a timestamp such as 2018-07-08T10:00Z and the current date is 2018-07-11, then this workflow will immediately be executed 3 times. 
 
 #### Coordinator.xml
-{{< highlight xml "linenos=table" >}}
+{{< highlight xml >}}
 <coordinator-app name="etl"
 frequency="0 7 * * *"
 start="${jobStart}" end="${jobEnd}" timezone="UTC"
@@ -131,6 +131,6 @@ xmlns="uri:oozie:coordinator:0.2">
 {{< / highlight >}}
 
 #### deploy.sh
-{{< highlight shell "linenos=table" >}}
+{{< highlight shell >}}
 hdfs dfs -copyFromLocal -f * /user/test/workflow && oozie job -config job.properties -run
 {{< / highlight >}}
