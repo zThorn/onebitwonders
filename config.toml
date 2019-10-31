@@ -1,18 +1,20 @@
 baseURL = "https://onebitwonders.com"
-title = "Your title"
+title = "One Bit Wonders"
 theme = "m10c"
 paginate = 5
 
 [params]
-  author = "John Doe"
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium."
+  author = "Zach Thornton"
+  description = "Data Engineer @ Audley Travel"
   [[params.social]]
     name = "github"
-    url = "https://github.com/gohugoio"
+    url = "https://github.com/zThorn"
   [[params.social]]
     name = "twitter"
-    url = "https://twitter.com/gohugoio"
-
+    url = "https://twitter.com/zachthornton"
+  [[params.social]]
+    name = "gitlab"
+    url = "https://gitlab.com/zThorn"
   # Brown theme
   #[params.style]
   #  darkestColor = "#463625"
