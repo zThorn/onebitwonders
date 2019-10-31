@@ -29,7 +29,7 @@ paginate = 10
     darkColor = "#212121"
     lightColor = "#f5e3e0"
     lightestColor = "#C9C9C9"
-    primaryColor = "#fff"
+    primaryColor = "#C9C9C9"
   # Red and black theme
   #[params.style]
   #  darkestColor = "#d35050"
