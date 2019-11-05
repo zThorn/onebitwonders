@@ -5,7 +5,7 @@ paginate = 10
 
 [params]
   author = "Zach Thornton"
-  description = "Data Engineer @ Audley Travel"
+  description = "Data Engineer @ Audley Travel, writing snippets of things I learn so that I don't forget them"
   avatar="images/avatar.jpeg"
   [[params.social]]
     name = "github"
